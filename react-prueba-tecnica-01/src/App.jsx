@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
-import { getRandomFact } from "./services/fact";
 import { useCatImage } from "./hooks/useCatImage";
+import { useCatFact } from "./hooks/useCatFact";
+import { Otro } from "./Components/Otro";
 
 export function App() {
-  const [fact, setFact] = useState();
-
-  const PREFIX_URL = "https://cataas.com";
-
-  function setNewFact() {
-    getRandomFact().then((newFact) => setFact(newFact));
-  }
-
-  useEffect(() => {
-    setNewFact();
-  }, []);
-
+  const { fact, setNewFact } = useCatFact();
   const { catImage } = useCatImage({ fact });
 
   return (
@@ -24,7 +13,7 @@ export function App() {
       {fact && <p>{fact}</p>}
       {catImage && (
         <img
-          src={`${PREFIX_URL}${catImage}`}
+          src={`${catImage}`}
           alt={`Image extracted using first three words of ${fact}`}
         />
       )}
