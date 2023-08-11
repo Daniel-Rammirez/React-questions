@@ -1,0 +1,26 @@
+/* for display column*/
+main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  font-family: system-ui, Roboto;
+}
+
+main img {
+  max-width: 400px;
+  margin: 0 auto;
+  max-height: auto;
+}
+
+main p {
+  max-width: 300px;
+}
+
+/* for display row*/
+section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}

@@ -1,6 +1,7 @@
 import { useCatImage } from "./hooks/useCatImage";
 import { useCatFact } from "./hooks/useCatFact";
-import { Otro } from "./Components/Otro";
+// import { Otro } from "./Components/Otro";
+import "./App.css";
 
 export function App() {
   const { fact, setNewFact } = useCatFact();
@@ -10,13 +11,15 @@ export function App() {
     <main>
       <h1>App for cat lovers</h1>
       <button onClick={setNewFact}>Get new fact</button>
-      {fact && <p>{fact}</p>}
-      {catImage && (
-        <img
-          src={`${catImage}`}
-          alt={`Image extracted using first three words of ${fact}`}
-        />
-      )}
+      <section>
+        {fact && <p>{fact}</p>}
+        {catImage && (
+          <img
+            src={`${catImage}`}
+            alt={`Image extracted using first three words of ${fact}`}
+          />
+        )}
+      </section>
     </main>
   );
 }
