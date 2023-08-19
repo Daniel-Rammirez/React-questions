@@ -16,6 +16,8 @@ export function useMovies({ search, sort }) {
   }, []);
 
   const sortedMovies = useMemo(() => {
+    // if (movies === undefined <= 0 && sort) return;
+    // console.log("sorting");
     return sort
       ? [...movies].sort((a, b) => {
           //return  a.year - b.year; // sort por año
